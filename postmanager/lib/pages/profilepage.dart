@@ -5,6 +5,18 @@ class Profilepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: const Center(child: Text("Profile Page")),);
+    return Container(
+        child: Column(
+      children: [
+        Card(
+          elevation: 3,
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height/5,
+            child: Center(child: Text("Profile")),
+          ),
+        )
+      ],
+    ));
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:postmanager/pages/configpage.dart';
 import 'package:postmanager/pages/homepage.dart';
+import 'package:postmanager/pages/messagepage.dart';
 import 'package:postmanager/pages/postpage.dart';
 import 'package:postmanager/pages/profilepage.dart';
 
@@ -27,8 +29,12 @@ class _OverviewState extends State<Overview> {
         elevation: 6,
         shadowColor: Colors.black,
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.message, color: Colors.white)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.settings, color: Colors.white)),
+          IconButton(onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (_)=>Messagepage()));
+          }, icon: Icon(Icons.message, color: Colors.white)),
+          IconButton(onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (_)=>Configpage()));
+          }, icon: Icon(Icons.settings, color: Colors.white)),
         ],
       ),
       body: pages[index],
