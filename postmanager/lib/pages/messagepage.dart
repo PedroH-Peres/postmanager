@@ -7,9 +7,7 @@ class Messagepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Container(
-      child: Center(child: Text("Messages")),
-    ),
+      body: const Center(child: Text("Messages")),
     );
   }
 }

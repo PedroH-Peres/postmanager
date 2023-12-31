@@ -7,9 +7,7 @@ class Configpage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Container(
-        child: Center(child: Text("Configurations")),
-      ),
+      body: const Center(child: Text("Configurations")),
     );
   }
 }

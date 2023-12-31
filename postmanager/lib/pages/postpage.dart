@@ -5,6 +5,6 @@ class Postpage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: const Center(child: Text("Post Page")),);
+    return const Center(child: Text("Post Page"));
   }
 }

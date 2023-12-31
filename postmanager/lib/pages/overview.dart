@@ -6,7 +6,7 @@ import 'package:postmanager/pages/postpage.dart';
 import 'package:postmanager/pages/profilepage.dart';
 
 class Overview extends StatefulWidget {
-  Overview({super.key});
+  const Overview({super.key});
 
   @override
   State<Overview> createState() => _OverviewState();
@@ -15,7 +15,7 @@ class Overview extends StatefulWidget {
 class _OverviewState extends State<Overview> {
   int index = 0;
 
-  List<dynamic> pages = [Homepage(), Postpage(), Profilepage()];
+  List<dynamic> pages = const [Homepage(), Postpage(), Profilepage()];
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +27,12 @@ class _OverviewState extends State<Overview> {
             });
           },
           elevation: 0,
-          child: Icon(Icons.add, color: Colors.white, size: index == 1 ? 30 : 25,),
-          backgroundColor: Color.fromARGB(255, 235, 170, 248),
+          backgroundColor: const Color.fromARGB(255, 235, 170, 248),
+          child: Icon(
+            Icons.add,
+            color: Colors.white,
+            size: index == 1 ? 30 : 25,
+          ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         appBar: AppBar(
@@ -43,27 +47,35 @@ class _OverviewState extends State<Overview> {
             IconButton(
                 onPressed: () {
                   Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => Messagepage()));
+                      .push(MaterialPageRoute(builder: (_) => const Messagepage()));
                 },
-                icon: Icon(Icons.message, color: Colors.white)),
+                icon: const Icon(Icons.message, color: Colors.white)),
             IconButton(
                 onPressed: () {
                   Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => Configpage()));
+                      .push(MaterialPageRoute(builder: (_) => const Configpage()));
                 },
-                icon: Icon(Icons.settings, color: Colors.white)),
+                icon: const Icon(Icons.settings, color: Colors.white)),
           ],
         ),
         body: pages[index],
         bottomNavigationBar: BottomAppBar(
-          color: Color.fromARGB(255, 225, 172, 235),
+          color: const Color.fromARGB(255, 225, 172, 235),
           notchMargin: 3,
           elevation: 1,
-          child: Container(
-              child: Row(
+          shape: const AutomaticNotchedShape(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(15),
+              ),
+            ),
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+            ),
+          ),
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              
               IconButton(
                 iconSize: 35,
                 onPressed: () {
@@ -71,10 +83,12 @@ class _OverviewState extends State<Overview> {
                     index = 0;
                   });
                 },
-                icon: Icon(index == 0 ?Icons.home :Icons.home_outlined, color: Colors.white,),
-                
+                icon: Icon(
+                  index == 0 ? Icons.home : Icons.home_outlined,
+                  color: Colors.white,
+                ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
               IconButton(
@@ -84,19 +98,12 @@ class _OverviewState extends State<Overview> {
                     index = 2;
                   });
                 },
-                icon: Icon(index == 2 ?Icons.person :Icons.person_outline, color: Colors.white,),
+                icon: Icon(
+                  index == 2 ? Icons.person : Icons.person_outline,
+                  color: Colors.white,
+                ),
               )
             ],
-          )),
-          shape: AutomaticNotchedShape(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(
-                top: Radius.circular(15),
-              ),
-            ),
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(20)),
-            ),
           ),
         ));
   }
