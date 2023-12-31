@@ -29,8 +29,17 @@ class Profilepage extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(10),
-                    color: Color.fromARGB(255, 225, 130, 241),
+                    margin: const EdgeInsets.all(20),
+                    child: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text("Nome: "),
+                        Text("Posts: "),
+                        Text("Data de ingresso: "),
+                        Text("Seguidores: ")
+                      ],
+                    ),
                   ),
                 )
               ],

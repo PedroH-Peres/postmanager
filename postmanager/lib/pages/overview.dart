@@ -76,31 +76,37 @@ class _OverviewState extends State<Overview> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              IconButton(
-                iconSize: 35,
-                onPressed: () {
-                  setState(() {
-                    index = 0;
-                  });
-                },
-                icon: Icon(
-                  index == 0 ? Icons.home : Icons.home_outlined,
-                  color: Colors.white,
+              SizedBox(
+                width: 100,
+                child: IconButton(
+                  iconSize: 35,
+                  onPressed: () {
+                    setState(() {
+                      index = 0;
+                    });
+                  },
+                  icon: Icon(
+                    index == 0 ? Icons.home : Icons.home_outlined,
+                    color: Colors.white,
+                  ),
                 ),
               ),
               const SizedBox(
                 width: 5,
               ),
-              IconButton(
-                iconSize: 35,
-                onPressed: () {
-                  setState(() {
-                    index = 2;
-                  });
-                },
-                icon: Icon(
-                  index == 2 ? Icons.person : Icons.person_outline,
-                  color: Colors.white,
+              SizedBox(
+                width: 100,
+                child: IconButton(
+                  iconSize: 35,
+                  onPressed: () {
+                    setState(() {
+                      index = 2;
+                    });
+                  },
+                  icon: Icon(
+                    index == 2 ? Icons.person : Icons.person_outline,
+                    color: Colors.white,
+                  ),
                 ),
               )
             ],
